@@ -9,5 +9,5 @@ var myServer = http.createServer(function handleRequest(req, res)
 });
  
 var port = process.env.PORT || 80;
-myServer.listen(port); // listen on port 8080
+myServer.listen(port); 
 console.log('Server running at port ' + port);
