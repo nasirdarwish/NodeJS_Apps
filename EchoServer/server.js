@@ -1,29 +1,25 @@
 var http = require('http'); // require (use) the http module
 // create an HTTP server
 
-
-
-
 function handleRequest(req, res) 
 {  // this function is called when a request is received
-   res.writeHead(200, { 'Content-Type': 'text/plain' });
+ 
    var bodyData='';
 
-   req.on("data", function (err,data) 
-   { bodyData += data; }
+    req.on('data', function (chunk) 
+   { bodyData += chunk; });
 
+    req.on("end", function () 
+   {   
+    console.log('POSTed: ' + bodyData);
+   
+     res.writeHead(200, { 'Content-Type': 'text/html' }  );
 
-    req.on("end", function (err,data) 
-   { res.writeHead(200, { "content-type": "text/html" }  );
-     res.write()
-   
-   
-   
-    }
-
-   // send this as part of the response
-   res.write('Hello World\n');
-   res.end();
+       res.write(JSON.stringify(req.headers) );
+     res.end(bodyData)
+     res.end(bodyData) 
+    })
+     
 }
 
 

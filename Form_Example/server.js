@@ -59,7 +59,7 @@ var server = http.createServer(handelRequest);
 
 
 // Port 8080 will be used if app is run from CLI
-var Port = process.env.PORT || 8080;
+var Port = process.env.PORT || 80;
 
 server.listen(Port);
  console.log("Server listening on Portt = " + Port );
