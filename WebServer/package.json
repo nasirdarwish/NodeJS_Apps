@@ -1,0 +1,8 @@
+{
+  "name": "WebServer",
+  "version": "0.0.1",
+  "author": "",
+  "dependencies": {
+    "mime": "^1.2.11"
+  }
+}
